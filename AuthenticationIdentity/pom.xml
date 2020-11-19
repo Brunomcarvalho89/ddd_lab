@@ -10,7 +10,6 @@
     <name>AuthenticationIdentity</name>
 
     <properties>
-        <!--<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit-jupiter.version>5.4.2</junit-jupiter.version>
         <java.version>14</java.version>
@@ -50,11 +49,10 @@
         
         <dependency>
             <groupId>com.devsmall</groupId>
-            <artifactId>CollaborationCommon</artifactId>
+            <artifactId>ResowCommon</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         
-        <!-- exclude junit 4 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -147,11 +145,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-<!--            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.1</version>
-            </plugin>-->
         </plugins>
     </build>
     
