@@ -2,6 +2,7 @@ package com.resow.emailqueue.application;
 
 import com.resow.emailqueue.application.dto.UserDTO;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -18,10 +19,10 @@ public class UserDTOTest {
         String fullname = "fullname";
         String nickname = "nickname";
         
-        Set<String> email = Collections.emptySet();
+        Set<String> email = new HashSet<>();
         email.add("teste@teste.com");
         
-        Set<String> phones = Collections.emptySet();
+        Set<String> phones = new HashSet<>();
         phones.add("992256545");
         
         String addressDescription = "address description";

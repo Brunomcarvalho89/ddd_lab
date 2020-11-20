@@ -8,11 +8,11 @@
         <relativePath/> 
     </parent>
     <groupId>com.resow</groupId>
-    <artifactId>EmailQueue</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>EmailSender</artifactId>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
-    <name>EmailQueue</name>
-    <description>Email Queue</description>
+    <name>EmailSender</name>
+    <description>Email sender</description>
 
     <properties>
         <java.version>1.8</java.version>

@@ -36,12 +36,14 @@ public class RabbitMQConsumer {
     private String from;
 
     @RabbitListener(queues = "${queue.email.user.created}")
-    public void recievedMessage(String sUserCreated, Message message, Channel channel) {
+    public void recievedMessage(Message message, Channel channel) {
 
         try {
 
             ObjectMapper objectMapper = new ObjectMapper();
-
+            
+            String sUserCreated = new String(message.getBody());
+            
             UserDTO userCreated = objectMapper.readValue(sUserCreated, UserDTO.class);
 
             new EmailServiceUserCreated(this.emailSender, this.emailFactory, this.from)

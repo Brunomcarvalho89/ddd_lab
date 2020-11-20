@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.util.ErrorHandler;
 
 /**
  *
@@ -55,6 +56,12 @@ public class RabbitMQConfig {
         container.setConnectionFactory(connectionFactory);
         container.setQueueNames(queueEmailUserCreated);
         container.setMessageListener(listenerAdapter);
+        container.setErrorHandler(new ErrorHandler() {
+            @Override
+            public void handleError(Throwable thrwbl) {
+                System.out.println(thrwbl.getMessage());
+            }
+        });
         return container;
     }
 

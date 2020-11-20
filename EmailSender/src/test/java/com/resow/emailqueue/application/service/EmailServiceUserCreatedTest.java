@@ -7,6 +7,7 @@ import com.resow.emailqueue.domain.Email;
 import com.resow.emailqueue.domain.EmailWithAttachment;
 import com.resow.emailqueue.domain.service.impl.EmailFactory;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -23,10 +24,10 @@ public class EmailServiceUserCreatedTest {
         String fullname = "fullname";
         String nickname = "nickname";
 
-        Set<String> email = Collections.emptySet();
+        Set<String> email = new HashSet<>();
         email.add("teste@teste.com");
 
-        Set<String> phones = Collections.emptySet();
+        Set<String> phones = new HashSet<>();
         phones.add("992256545");
 
         String addressDescription = "address description";
