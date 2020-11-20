@@ -8,7 +8,7 @@ Os projetos AuthenticationIdentity e EmailSender foram desenvolvidos usando a ar
   
   ## AuthenticationIdentity
   
-    Projeto AuthenticationIdentity é o projeto principal com api para cadastro de usuarios e geração do token para acesso as funcionalidades. Como exercício estou consumindo duas apis de cep para validação do cep informado(Chamada no código esta comentada, porém esta funcionando).
+    Projeto AuthenticationIdentity é o projeto principal com api para cadastro de usuarios e geração do token para acesso as funcionalidades. Como exercício estou consumindo duas apis de cep para validação do cep informado(Chamada no código esta comentada, porém esta funcionando). Após o registro do usuário uma mensagem é enviada para uma fila no rabbitmq com o objetivo de notificar o usuário.
     
     - Tecnologias e Frameworks:
         * Spring Boot
@@ -26,7 +26,7 @@ Os projetos AuthenticationIdentity e EmailSender foram desenvolvidos usando a ar
   
   ## EmailSender
   
-    Projeto EmailSender responsável por consumir mensagens do RabbitMQ e realizar a notificação via email para o usuário.
+    Projeto EmailSender responsável por consumir mensagens do RabbitMQ e realizar a notificação via email para o usuário. Quando o usuário é cadastrado pela api consumo a mensagem adicionada na fila com os dados do usuários para notificação via Email.
     
     - Tecnologias e Frameworks:
         * Spring boot
