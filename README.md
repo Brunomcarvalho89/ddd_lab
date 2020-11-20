@@ -38,7 +38,7 @@ Os projetos AuthenticationIdentity e EmailSender foram desenvolvidos usando a ar
     Projeto ResowCommom com classes utilizadas nos outros projetos.
         
         
-        
+Os projetos tem cobertura de testes, porém existem algumas funcionalidades que ainda nao foram implementadas.
 
 
 
