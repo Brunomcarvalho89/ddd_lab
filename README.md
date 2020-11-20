@@ -2,7 +2,7 @@
 
 Implementação do contexto de Identificação e Autenticação de usuários usando o conhecimentos de Domain Driven Design em Java.
 
-Os projetos AuthenticationIdentity e EmailSender foram desenvolvidos usando a arquitetura Hexagonal/Cebola/PortsAndAdapter para encapsulamento do Dominio.
+Os projetos AuthenticationIdentity e EmailSender foram desenvolvidos usando a arquitetura Hexagonal/PortsAndAdapters para encapsulamento do Dominio.
 
 # Descrição dos projetos:
   
