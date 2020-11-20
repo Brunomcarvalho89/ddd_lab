@@ -2,26 +2,29 @@
 
 Implementação do contexto de Identificação e Autenticação de usuários usando o conhecimentos de Domain Driven Design em Java.
 
-Descrição dos projetos:
+Os projetos AuthenticationIdentity e EmailSender foram desenvolvidos usando a arquitetura Hexagonal/Cebola/PortsAndAdapter para encapsulamento do Dominio.
+
+# Descrição dos projetos:
   
-  # AuthenticationIdentity
+  ## AuthenticationIdentity
   
-    Projeto AuthenticationIdentity é o projeto principal com api para cadastro de usuarios e geração do token para acesso as funcionalidades.    
+    Projeto AuthenticationIdentity é o projeto principal com api para cadastro de usuarios e geração do token para acesso as funcionalidades. Como exercício estou consumindo duas apis de cep para validação do cep informado(Chamada no código esta comentada, porém esta funcionando).
     
     - Tecnologias e Frameworks:
-        * Spring boot
-        * Spring boot JPA
-        * Spring boot Security
+        * Spring Boot
+        * Spring Boot JPA
+        * Spring Boot Security
+        * Spring Boot Actuator
         * Spring AMQP para integração com o sistema de fila RabbitMQ
         * Mysql
         * Flyway
-        * JWT
+        * Autenticação com JWT
         * Swagger
         * Tom cat 9
         * JUnit 5
         * H2
   
-  # EmailSender
+  ## EmailSender
   
     Projeto EmailSender responsável por consumir mensagens do RabbitMQ e realizar a notificação via email para o usuário.
     
@@ -30,9 +33,9 @@ Descrição dos projetos:
         * Spring AMQP para integração com o sistema de fila RabbitMQ
         * JUnit 5
         
-  # ResowCommom
+  ## ResowCommom
   
-    Projeto ResowCommom responsável com classes utilizadas nos outros projetos.
+    Projeto ResowCommom com classes utilizadas nos outros projetos.
         
         
         
