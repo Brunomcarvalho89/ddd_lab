@@ -40,5 +40,7 @@ Os projetos AuthenticationIdentity e EmailSender foram desenvolvidos usando a ar
         
 Os projetos tem cobertura de testes, porém existem algumas funcionalidades que ainda nao foram implementadas.
 
+A api rest segue o Modelo de Maturidade de Richardson.
+
 
 
