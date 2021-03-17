@@ -2,6 +2,11 @@
 
 Implementação do contexto de Identificação e Autenticação de usuários usando o conhecimentos de Domain Driven Design em Java.
 
+Os projetos foram baseados no estudo dos seguintes livros:
+- Implementado Domain Driven Design do Vaughn Vernon
+- Arquitetura limpa do Robert C. Martin
+- Domain Driven Design do Eric Evans
+
 Os projetos AuthenticationIdentity e EmailSender foram desenvolvidos usando a arquitetura Hexagonal/PortsAndAdapters para encapsulamento do Dominio.
 
 # Descrição dos projetos:
