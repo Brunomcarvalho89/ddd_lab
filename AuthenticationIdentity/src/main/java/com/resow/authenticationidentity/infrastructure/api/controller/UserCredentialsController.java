@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author home
+ * @author brunomcarvalho89@gmail.com
  */
 @RestController
 @RequestMapping("/user/credentials")
@@ -48,13 +48,13 @@ public class UserCredentialsController implements IUserCredentialsController {
     private void init() {
         this.iUserCredentialsService = new UserCredentialsService(userRepository);
 
-//        this.authenticationService = new UserAuthenticationByPasswordService(userRepository);
-//        this.authenticationByPasswordAndGenerateTokenService = new UserAuthenticationByPasswordAndGenerateTokenService(
-//                authenticationService,
-//                userRepository,
-//                new UserTokenService(
-//                        userTokenRepository,
-//                        new UserTokenIssuer()));
+        this.authenticationService = new UserAuthenticationByPasswordService(userRepository);
+        this.authenticationByPasswordAndGenerateTokenService = new UserAuthenticationByPasswordAndGenerateTokenService(
+                authenticationService,
+                userRepository,
+                new UserTokenService(
+                        userTokenRepository,
+                        new UserTokenIssuer()));
     }
 
     @Override
