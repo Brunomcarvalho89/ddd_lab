@@ -8,14 +8,10 @@ import com.resow.authenticationidentity.application.command.ChangePasswordComman
 import com.resow.authenticationidentity.application.service.IUserAuthenticationByPasswordAndGenerateTokenService;
 import com.resow.authenticationidentity.application.service.IUserAuthenticationByPasswordService;
 import com.resow.authenticationidentity.application.service.IUserCredentialsService;
-import com.resow.authenticationidentity.application.service.impl.UserAuthenticationByPasswordAndGenerateTokenService;
-import com.resow.authenticationidentity.application.service.impl.UserAuthenticationByPasswordService;
 import com.resow.authenticationidentity.application.service.impl.UserCredentialsService;
-import com.resow.authenticationidentity.application.service.impl.UserTokenService;
 import com.resow.authenticationidentity.domain.model.identity.exception.NameInvalidException;
 import com.resow.authenticationidentity.domain.model.identity.repository.UserRepository;
 import com.resow.authenticationidentity.infrastructure.repository.hibernate.UserTokenRepository;
-import com.resow.authenticationidentity.infrastructure.token.UserTokenIssuer;
 import com.resow.common.exception.GenerateHashException;
 import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,24 +33,11 @@ public class UserCredentialsController implements IUserCredentialsController {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private UserTokenRepository userTokenRepository;
-
     private IUserCredentialsService iUserCredentialsService;
-    private IUserAuthenticationByPasswordService authenticationService;
-    private IUserAuthenticationByPasswordAndGenerateTokenService authenticationByPasswordAndGenerateTokenService;
 
     @PostConstruct
     private void init() {
         this.iUserCredentialsService = new UserCredentialsService(userRepository);
-
-        this.authenticationService = new UserAuthenticationByPasswordService(userRepository);
-        this.authenticationByPasswordAndGenerateTokenService = new UserAuthenticationByPasswordAndGenerateTokenService(
-                authenticationService,
-                userRepository,
-                new UserTokenService(
-                        userTokenRepository,
-                        new UserTokenIssuer()));
     }
 
     @Override

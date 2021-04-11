@@ -9,6 +9,7 @@ import com.resow.authenticationidentity.domain.model.identity.repository.UserRep
 import com.resow.authenticationidentity.infrastructure.hash.HashFunctionArgon2;
 import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -23,7 +24,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan(basePackageClasses = {SpringInitialization.class})
 @EntityScan(basePackageClasses = {User.class, UserToken.class})
 @EnableJpaRepositories(basePackageClasses = UserRepository.class)
-public class SpringInitialization {
+public class SpringInitialization implements CommandLineRunner {
 
     public static void main(String[] args) {
         SpringApplication.run(SpringInitialization.class, args);
@@ -32,9 +33,8 @@ public class SpringInitialization {
     @Autowired
     private UserCreatedNotification userCreatedNotification;
 
-    @PostConstruct
-    public void initialize() {
-
+    @Override
+    public void run(String... args) throws Exception {
         ApplicationStart
                 .instance()
                 .subscribeEvent(new CreatedUserSubscriber(userCreatedNotification))

@@ -70,10 +70,10 @@ public class UserControllerTest {
     @BeforeAll
     public static void init() {
 
-//        ApplicationStart
-//                .instance()
-//                .clear()
-//                .initializeBeansFacade(new HashFunctionArgon2());
+        ApplicationStart
+                .instance()
+                .clear()
+                .initializeBeansFacade(new HashFunctionArgon2());
     }
 
     @Test
